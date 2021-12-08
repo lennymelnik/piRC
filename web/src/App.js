@@ -6,7 +6,7 @@ function App() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io(`http://192.168.0.129:3000`);
+    const newSocket = io(`http://192.168.0.129:3001`);
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
