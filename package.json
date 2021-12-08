@@ -1,0 +1,25 @@
+{
+  "name": "pirc",
+  "version": "1.0.0",
+  "description": "The open source software for controlling a RC car using a raspberry pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lennymelnik/piRC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lennymelnik/piRC/issues"
+  },
+  "homepage": "https://github.com/lennymelnik/piRC#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pi-blaster.js": "^0.1.3",
+    "socket.io": "^4.4.0",
+    "ws": "^8.3.0"
+  }
+}
