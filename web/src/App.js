@@ -18,17 +18,17 @@ function App() {
   }
   function getPermission(){
 
-    if(typeof DeviceRotationRate.requestPermission === 'function'){
-      DeviceRotationRate.requestPermission()
+    if(typeof DeviceOrientationEvent.requestPermission === 'function'){
+      DeviceOrientationEvent.requestPermission()
        .then((state)=>{
          if(state === 'granted'){
-           window.addEventListener('devicerotation',handleOrientation);
+           window.addEventListener('deviceorientation',handleOrientation);
          } else{
            alert("You will have to use the drag")
          }
        })
      }else{
-       window.addEventListener('devicerotation', handleOrientation)
+       window.addEventListener('deviceorientation', handleOrientation)
      }
    } 
   
