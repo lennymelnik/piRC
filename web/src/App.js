@@ -7,7 +7,6 @@ function App() {
   const [ourOrientation, setOrientation] = useState('null');
 
   function handleOrientation(event) {
-    alert("Change")
     var absolute = event.absolute;
     var alpha    = event.alpha;
     var beta     = event.beta;
