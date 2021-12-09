@@ -13,7 +13,8 @@ function App() {
     var gamma    = event.gamma;
     
     // Do stuff with the new orientation data
-    setOrientation(beta)
+  
+    setOrientation((beta+50)/100)
   }
   function getPermission(){
 
