@@ -15,29 +15,23 @@ function App() {
     // Do stuff with the new orientation data
     setOrientation(beta)
   }
- 
-  useEffect(() => {
-    function getPermission(){
+  function getPermission(){
 
-      if(typeof DeviceMotionEvent.requestPermission === 'function'){
-       DeviceMotionEvent.requestPermission()
-         .then(ourRequest=>{
-           alert(ourRequest)
-           if(ourRequest === 'granted'){
-             window.addEventListener('devicemotion',handleOrientation);
-           } else{
-             alert("You will have to use the drag")
-           }
-         })
-       }else{
-         window.addEventListener('devicemotion', handleOrientation)
-       }
-     } 
-     getPermission()
-    
-   console.log('start')
-   
-  }, []);
+    if(typeof DeviceMotionEvent.requestPermission === 'function'){
+     DeviceMotionEvent.requestPermission()
+       .then(ourRequest=>{
+         alert(ourRequest)
+         if(ourRequest === 'granted'){
+           window.addEventListener('devicemotion',handleOrientation);
+         } else{
+           alert("You will have to use the drag")
+         }
+       })
+     }else{
+       window.addEventListener('devicemotion', handleOrientation)
+     }
+   } 
+  
   useEffect(() => {
     const newSocket = io(`http://108.46.212.16:3001`);
     setSocket(newSocket);
