@@ -51,7 +51,7 @@ function App() {
       <header className="App-header">
         <h1>{ourOrientation}</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <a onClick={()=>{}}>Move with rotation</a>
+        <a onClick={()=>{getPermission()}}>Move with rotation</a>
         <label for="customRange1" class="form-label">Move Servo</label>
 <input min='.075' max = ".25" step ="0.005" type="range" class="form-range" id="customRange1" onChange={(e)=>{  socket.emit('modify', e.target.value);}}/>
 
