@@ -14,7 +14,7 @@ function App() {
     
     // Do stuff with the new orientation data
   
-    setOrientation((beta+50)/100)
+    setOrientation(((beta+50)/100)*.2)
   }
   function getPermission(){
 
@@ -33,7 +33,7 @@ function App() {
    } 
   
   useEffect(() => {
-    const newSocket = io(`http://108.46.212.16:3001`);
+    const newSocket = io(`https://rc.hackerslab.ml`);
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
