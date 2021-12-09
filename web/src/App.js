@@ -12,7 +12,6 @@ function App() {
     var beta     = event.beta;
     var gamma    = event.gamma;
     
-    alert(Object.keys(event))
     // Do stuff with the new orientation data
     setOrientation(beta)
   }
