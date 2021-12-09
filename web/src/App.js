@@ -38,7 +38,7 @@ function App() {
     (function(){
       // do some stuff
       if(socket){
-        setTimeout(socket.emit('modify', beta), 500);
+        setTimeout(socket.emit('modify', ourOrientation), 500);
 
       }
   })();
