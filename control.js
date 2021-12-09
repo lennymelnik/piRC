@@ -14,7 +14,7 @@ io.on('connection', (socket) => {  console.log('a user connected');
 
 
     socket.on('modify', (value) => {
-        if(value > .05 && value < .14){
+        if(value > .05 && value < .16){
             piblaster.setPwm(18, value ); 
         console.log("Modify", value)
         }    
