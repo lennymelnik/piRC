@@ -5,18 +5,19 @@ import React, { useEffect, useState } from 'react';
 function App() {
   const [socket, setSocket] = useState(null);
   const [ourOrientation, setOrientation] = useState('null');
-
+  var beta
   function handleOrientation(event) {
     var absolute = event.absolute;
     var alpha    = event.alpha;
-    var beta     = event.beta;
+    beta     = (((event.beta+50)/100)*.2).toFixed(4);
     var gamma    = event.gamma;
     
     // Do stuff with the new orientation data
   
-    setOrientation((((beta+50)/100)*.2).toFixed(4))
-    socket.emit('modify', ourOrientation)
+    setOrientation(beta)
   }
+  
+
   function getPermission(){
 
     if(typeof DeviceOrientationEvent.requestPermission === 'function'){
@@ -32,6 +33,14 @@ function App() {
        window.addEventListener('deviceorientation', handleOrientation)
      }
    } 
+   useEffect(()=>{
+
+    (function(){
+      // do some stuff
+      setTimeout(socket.emit('modify', beta), 500);
+  })();
+     
+   })
   
   useEffect(() => {
     const newSocket = io(`https://rc.hackerslab.ml`);

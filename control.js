@@ -14,7 +14,7 @@ io.on('connection', (socket) => {  console.log('a user connected');
 
 
     socket.on('modify', (value) => {    piblaster.setPwm(18, value ); 
-        console.log("Modify")
+        console.log("Modify", value)
     })
 
 });
