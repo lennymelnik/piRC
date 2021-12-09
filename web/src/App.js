@@ -14,7 +14,8 @@ function App() {
     
     // Do stuff with the new orientation data
   
-    setOrientation(((beta+50)/100)*.2)
+    setOrientation((((beta+50)/100)*.2).toFixed(4))
+    socket.emit('modify', ourOrientation)
   }
   function getPermission(){
 
