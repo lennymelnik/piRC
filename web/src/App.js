@@ -37,7 +37,10 @@ function App() {
 
     (function(){
       // do some stuff
-      setTimeout(socket.emit('modify', beta), 500);
+      if(socket){
+        setTimeout(socket.emit('modify', beta), 500);
+
+      }
   })();
      
    })
