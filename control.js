@@ -13,8 +13,11 @@ app.get('/', (req, res) => {  res.sendFile(__dirname + '/index.html');});
 io.on('connection', (socket) => {  console.log('a user connected');
 
 
-    socket.on('modify', (value) => {    piblaster.setPwm(18, value ); 
+    socket.on('modify', (value) => {
+        if(value > .05 && value < .14){
+            piblaster.setPwm(18, value ); 
         console.log("Modify", value)
+        }    
     })
 
 });
